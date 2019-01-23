@@ -7,7 +7,7 @@ ENV CUDNN_VERSION=7.4.1.5-1+cuda9.0
 ENV NCCL_VERSION=2.3.5-2+cuda9.0
 
 # Python 2.7 or 3.5 is supported by Ubuntu Xenial out of the box
-ARG python=3.6
+ARG python=3.5
 ENV PYTHON_VERSION=${python}
 
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends \
