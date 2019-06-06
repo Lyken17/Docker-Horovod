@@ -69,10 +69,6 @@ RUN ldconfig /usr/local/cuda-9.0/targets/x86_64-linux/lib/stubs && \
     HOROVOD_GPU_ALLREDUCE=NCCL HOROVOD_WITH_TENSORFLOW=1 HOROVOD_WITH_PYTORCH=1 HOROVOD_WITH_MXNET=1 pip install --no-cache-dir horovod && \
     ldconfig
 
-# install common packages 
-RUN pip install tensorboardX tqdm 
-RUN pip install --upgrade git+https://github.com/tensorpack/tensorpack.git
-
 # Install OpenSSH for MPI to communicate between containers
 RUN apt-get install -y --no-install-recommends openssh-client openssh-server && \
     mkdir -p /var/run/sshd
@@ -88,3 +84,9 @@ RUN apt-get install -y --no-install-recommends subversion && \
     rm -rf /examples/.svn
 
 WORKDIR "/examples"
+
+# install common packages
+RUN pip install tensorboardX tqdm
+RUN pip install --upgrade git+https://github.com/tensorpack/tensorpack.git
+RUN apt install -y libzmq3-dev
+RUN pip install --upgrade git+https://github.com/tensorpack/zmq_ops.git
