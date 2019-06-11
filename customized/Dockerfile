@@ -89,4 +89,7 @@ WORKDIR "/examples"
 RUN pip install tensorboardX tqdm
 RUN pip install --upgrade git+https://github.com/tensorpack/tensorpack.git
 RUN apt install -y libzmq3-dev
-RUN pip install --upgrade git+https://github.com/tensorpack/zmq_ops.git
+# RUN pip install --upgrade git+https://github.com/tensorpack/zmq_ops.git
+RUN git clone https://github.com/tensorpack/zmq_ops && \
+	cd zmq_ops && \
+	pip install .
