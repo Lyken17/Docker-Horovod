@@ -3,19 +3,19 @@
 ver=4.1
 version=4.1.1
 
-apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends \
-        build-essential \
-        cmake \
-        gcc \
-        g++ \
-        llvm \
-        clang \
-        llvm \
-        git \
-        curl \
-        vim \
-        wget \
-        ca-certificates
+# apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends \
+#         build-essential \
+#         cmake \
+#         gcc \
+#         g++ \
+#         llvm \
+#         clang \
+#         llvm \
+#         git \
+#         curl \
+#         vim \
+#         wget \
+#         ca-certificates
         
 
 # compile and install 
